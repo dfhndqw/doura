@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    background-color: #ffffff; /* خلفية الصفحة بيضاء */
+    font-family: Arial, sans-serif;
+  }
+
+  #hedar {
+    background-color: #ffffff; /* خلفية الهيدر بيضاء */
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ccc; /* حافة سفلية بلون رمادي فاتح */
+
+  }
+  #mo0m {
+    margin-top: -150px;
+    margin-bottom: -200px;
+  }
